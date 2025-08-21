@@ -15,3 +15,20 @@ python3 subtakeover.py -f domains.txt -t 20 -o results.txt
 
 # Full scan with all options
 python3 subtakeover.py -f targets.txt -t 25 --timeout 15 -o report.txt -v
+
+### Quick Install
+```bash
+# Clone the repository
+# Clone the repository (replace 'yourusername' with your GitHub username)
+git clone https://github.com/yourusername/subtakeover.git
+cd subtakeover
+# Create virtual environment (required on Kali Linux)
+python3 -m venv venv
+source venv/bin/activate
+# Install dependencies
+pip3 install -r deps.txt
+pip install -r deps.txt
+# Run the tool
+python3 subtakeover.py --help
+python subtakeover.py --help
+```
