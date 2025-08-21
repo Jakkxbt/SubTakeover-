@@ -1,0 +1,17 @@
+Installation Commands for Kali
+
+git clone https://github.com/yourusername/subtakeover.git
+cd subtakeover
+pip3 install -r deps.txt
+python3 subtakeover.py --help
+
+Sample Usage
+
+# Scan single domain
+python3 subtakeover.py -d subdomain.target.com -v
+
+# Scan from file with 20 threads
+python3 subtakeover.py -f domains.txt -t 20 -o results.txt
+
+# Full scan with all options
+python3 subtakeover.py -f targets.txt -t 25 --timeout 15 -o report.txt -v
