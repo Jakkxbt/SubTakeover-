@@ -1,0 +1,40 @@
+### Kali Linux
+**Important**: Kali Linux uses externally-managed Python environments, so you must use a virtual environment:
+```bash
+# Update package lists
+sudo apt update
+# Install Python and pip (if not already installed)
+sudo apt install python3 python3-pip git
+# Clone the repository
+git clone https://github.com/yourusername/subtakeover.git
+cd subtakeover
+# Install required packages
+sudo apt install python3 python3-pip python3-venv git
+# Clone the repository (replace 'yourusername' with your GitHub username)
+git clone https://github.com/yourusername/subtakeover.git
+cd subtakeover
+# Create and activate virtual environment (REQUIRED on Kali)
+python3 -m venv venv
+source venv/bin/activate
+# Install Python dependencies
+pip3 install -r deps.txt
+# Optional: Create alias for easier access
+echo 'alias subtakeover="python3 /path/to/subtakeover/subtakeover.py"' >> ~/.bashrc
+source ~/.bashrc
+pip install -r deps.txt
+# Test installation
+python subtakeover.py --help
+# Optional: Create activation script for easier access
+echo '#!/bin/bash
+cd /path/to/subtakeover
+source venv/bin/activate
+python subtakeover.py "$@"' > ~/bin/subtakeover
+chmod +x ~/bin/subtakeover
+```
+**Note**: Always activate the virtual environment before using the tool:
+```bash
+cd subtakeover
+source venv/bin/activate
+python subtakeover.py -d example.com
+```
+### Ubuntu/Debian
