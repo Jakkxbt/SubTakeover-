@@ -5,7 +5,7 @@ A powerful command-line tool for detecting potential subdomain takeover vulnerab
 ## Features
 
 - **Multi-Domain Support**: Scan single domains or batch process from files
-- **Comprehensive Detection**: Supports 25+ cloud services and platforms
+- **Comprehensive Detection**: Supports 40+ cloud services and platforms
 - **DNS Analysis**: Detailed CNAME and A record resolution
 - **HTTP Fingerprinting**: Analyzes HTTP responses for takeover indicators  
 - **Proof of Concept**: Basic PoC validation for high-confidence findings
@@ -42,6 +42,23 @@ The tool can detect potential takeover vulnerabilities for:
 - Intercom
 - Webnode
 - Unbounce
+- Big Cartel
+- Campaign Monitor
+- Feedpress
+- Help Scout
+- Helpjuice
+- JetBrains YouTrack
+- LaunchRock
+- Readme.io
+- Strikingly
+- Uberflip
+- GetResponse
+- Simplebooklet
+- Aha
+- Vend
+- Canny
+- HatenaBlog
+- Ngrok
 
 ## Installation
 

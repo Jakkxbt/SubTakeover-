@@ -301,6 +301,111 @@ TAKEOVER_SIGNATURES = {
             'page not found'
         ],
         'status_codes': [404]
+    },
+
+    # ── Additional confirmed-vulnerable services (fingerprints from the
+    #    canonical can-i-take-over-xyz database; distinctive content strings
+    #    chosen to minimise false positives). ─────────────────────────────
+    'Big Cartel': {
+        'cname_patterns': ['.bigcartel.com', 'bigcartel.com'],
+        'content_patterns': ["oops! we couldn't find that page.", "we couldn't find that page"],
+        'status_codes': [404]
+    },
+
+    'Campaign Monitor': {
+        'cname_patterns': ['.createsend.com', 'createsend.com'],
+        'content_patterns': ['trying to access your account?', 'double check the domain name'],
+        'status_codes': [404, 302]
+    },
+
+    'Feedpress': {
+        'cname_patterns': ['redirect.feedpress.me', 'feedpress.me'],
+        'content_patterns': ['the feed has not been found.'],
+        'status_codes': [404]
+    },
+
+    'Help Scout': {
+        'cname_patterns': ['.helpscoutdocs.com', 'helpscoutdocs.com'],
+        'content_patterns': ['no settings were found for this company:'],
+        'status_codes': [404]
+    },
+
+    'Helpjuice': {
+        'cname_patterns': ['.helpjuice.com', 'helpjuice.com'],
+        'content_patterns': ["we could not find what you're looking for."],
+        'status_codes': [404]
+    },
+
+    'JetBrains YouTrack': {
+        'cname_patterns': ['.myjetbrains.com', 'myjetbrains.com'],
+        'content_patterns': ['is not a registered incloud youtrack'],
+        'status_codes': [404]
+    },
+
+    'LaunchRock': {
+        'cname_patterns': ['.launchrock.com', 'launchrock.com'],
+        'content_patterns': ['it looks like you may have taken a wrong turn somewhere'],
+        'status_codes': [404]
+    },
+
+    'Readme.io': {
+        'cname_patterns': ['.readme.io', 'readme.io'],
+        'content_patterns': ["project doesnt exist... yet!", 'project doesn\'t exist'],
+        'status_codes': [404]
+    },
+
+    'Strikingly': {
+        'cname_patterns': ['.strikinglydns.com', 'strikinglydns.com'],
+        'content_patterns': ["but if you're looking to build your own website"],
+        'status_codes': [404]
+    },
+
+    'Uberflip': {
+        'cname_patterns': ['.uberflip.com', 'uberflip.com'],
+        'content_patterns': ["the url you've accessed does not provide a hub", 'non-hub domain'],
+        'status_codes': [404]
+    },
+
+    'GetResponse': {
+        'cname_patterns': ['.gr8.com', 'gr8.com'],
+        'content_patterns': ['with getresponse landing pages, lead generation has never been easier'],
+        'status_codes': [404]
+    },
+
+    'Simplebooklet': {
+        'cname_patterns': ['.simplebooklet.com', 'simplebooklet.com'],
+        'content_patterns': ["we can't find this booklet"],
+        'status_codes': [404]
+    },
+
+    'Aha': {
+        'cname_patterns': ['.ideas.aha.io', 'ideas.aha.io'],
+        'content_patterns': ['there is no portal here ... sending you back to aha!', 'there is no portal here'],
+        'status_codes': [404]
+    },
+
+    'Vend': {
+        'cname_patterns': ['.vendhq.com', 'vendecommerce.com'],
+        'content_patterns': ["looks like you've traveled too far into cyberspace."],
+        'status_codes': [404]
+    },
+
+    'Canny': {
+        'cname_patterns': ['.canny.io', 'canny.io'],
+        'content_patterns': ['company not found', 'there is no such company'],
+        'status_codes': [404]
+    },
+
+    'HatenaBlog': {
+        'cname_patterns': ['.hatenablog.com', 'hatenablog.com'],
+        'content_patterns': ['404 blog is not found'],
+        'status_codes': [404]
+    },
+
+    'Ngrok': {
+        'cname_patterns': ['.ngrok.io', 'ngrok.io'],
+        'content_patterns': ['tunnel *.ngrok.io not found', 'ngrok.io not found'],
+        'status_codes': [404]
     }
 }
 

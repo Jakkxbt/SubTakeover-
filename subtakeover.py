@@ -130,14 +130,20 @@ class SubTakeoverScanner:
         vulnerabilities = []
         confidence_score = 0
         
+        # Services whose CNAME points at their infrastructure. A bare status
+        # code (e.g. 404) is only meaningful as corroboration for one of these —
+        # on its own it matches almost every signature and is pure noise.
+        cname_matched_services = set()
+
         # Check DNS-based signatures
         for cname in dns_info.get('cname_records', []):
             cname_lower = cname.lower().rstrip('.')
-            
+
             for service, signature in TAKEOVER_SIGNATURES.items():
                 # Check CNAME patterns
                 for pattern in signature.get('cname_patterns', []):
                     if pattern.lower() in cname_lower:
+                        cname_matched_services.add(service)
                         # Check if DNS resolution fails (potential takeover)
                         if not dns_info.get('a_records'):
                             vulnerabilities.append({
@@ -173,12 +179,15 @@ class SubTakeoverScanner:
                         })
                         confidence_score += 60
                         
-                # Check status code patterns
-                if status_code in signature.get('status_codes', []):
+                # Check status code patterns — only as corroboration for a service
+                # whose CNAME already matched, otherwise a single 404 flags every
+                # signature in the database (all use 404) and buries real findings.
+                if (service in cname_matched_services
+                        and status_code in signature.get('status_codes', [])):
                     vulnerabilities.append({
                         'type': 'HTTP_STATUS_TAKEOVER',
                         'service': service,
-                        'evidence': f'{protocol.upper()} returned status {status_code}',
+                        'evidence': f'{protocol.upper()} returned status {status_code} for a {service} CNAME',
                         'confidence': 'LOW',
                         'status_code': status_code
                     })
