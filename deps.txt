@@ -1,4 +1,9 @@
+# Core dependencies
 requests>=2.25.1
 dnspython>=2.1.0
 colorama>=0.4.4
 urllib3>=1.26.0
+
+# VulnScan additional dependencies
+# All scanning modules work with the core dependencies above
+# No additional packages required - uses Python standard library
